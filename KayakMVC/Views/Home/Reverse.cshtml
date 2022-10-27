@@ -1,0 +1,39 @@
+﻿@model KayakMVC.Models.Palindrome
+
+<div class="container mt-5">
+    <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col">
+            <h1 class="display-5 fw-bold lh-1 mb-3">
+                Kayak: A Coding Project
+            </h1>
+            <h4 class="lead pb-3">
+                Kayak is a palindrome. A palindrome is a word, phrase, or sequence that reads the same backward as forward. Write a program that checks if the phrase entered is a palindrome. Another example is Taco Cat.
+            </h4>
+        </div>
+        <div class="col">
+           @*Logo*@
+</div>
+        <div class="col">
+
+            <h5 class="border-1 border-bottom border-info">Enter a phrase or word to check</h5>
+            @* Form goes here*@
+            <form class="row gx-3 gy-2" asp-action="Reverse" asp-controller="Home" method="post">
+                <div class="col">
+                    <input asp-for="InputWord" class="form-control" value="@Model.InputWord" placeholder="Enter A Word or Phrase" aria-label="Enter A Word or Phrase.">
+                </div>
+                <div class="col-12">
+                    <button type="submit" id="btnSubmit" class="btn btn-info">Check It</button>
+                </div>
+            </form>
+                       
+            <h5 class="mt-5 border-bottom border-2">Reversed Result</h5>
+            <div class="col">
+                <p class="form-control">@Model.RevWord</p>
+                <p id="result">
+                    @Model.Message
+                </p>
+            </div>
+        </div>
+         
+         
+     
